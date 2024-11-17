@@ -1,0 +1,34 @@
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="{% url 'category' 'Mobiles' %}">
+                <img src="/static/images/mobilesbanner.webp" class="d-block w-50 mx-auto" alt="mobiles">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% url 'category' 'Home Appliances' %}">
+                <img src="/static/images/appliances.webp" class="d-block w-50 mx-auto" alt="appliances">
+            </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% url 'category' 'Laptops' %}">
+                <img src="/static/images/laptopsbanner.webp" class="d-block w-50 mx-auto" alt="laptops">
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .carousel-item a {
+        display: block;
+        text-decoration: none;
+    }
+    
+    .carousel-item img {
+        transition: transform 0.3s ease;
+    }
+    
+    .carousel-item a:hover img {
+        transform: scale(1.02);
+    }
+</style>

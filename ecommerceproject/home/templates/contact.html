@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-light mb-4">Contact Us</h1>
+            <div class="card bg-dark text-light">
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Contact Information -->
+                        <div class="col-md-6">
+                            <h2 class="card-title mb-4">Get in Touch</h2>
+                            
+                            <h4 class="mt-4">Headquarters</h4>
+                            <p>
+                                NovaMart Technologies Pvt. Ltd.<br>
+                                Level 15, World Trade Centre,<br>
+                                Cuffe Parade, Mumbai - 400005<br>
+                                Maharashtra, India
+                            </p>
+
+                            <h4 class="mt-4">Department Contacts</h4>
+                            
+                            <div class="mt-3">
+                                <h5>Sales Department</h5>
+                                <p>
+                                    📞 Phone: +91 22-4789 1000<br>
+                                    📱 WhatsApp: +91 98765 43210<br>
+                                    ✉️ Email: sales@novamart.com
+                                </p>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Customer Support</h5>
+                                <p>
+                                    📞 Phone: +91 22-4789 2000<br>
+                                    📱 WhatsApp: +91 98765 43211<br>
+                                    ✉️ Email: support@novamart.com
+                                </p>
+                            </div>
+
+                            <div class="mt-3">
+                                <h5>Technical Support</h5>
+                                <p>
+                                    📞 Phone: +91 22-4789 3000<br>
+                                    📱 WhatsApp: +91 98765 43212<br>
+                                    ✉️ Email: tech@novamart.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="col-md-6">
+                            <h2 class="card-title mb-4">Send us a Message</h2>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-success alert-dismissible fade show">
+                                            {{ message }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control bg-secondary text-light" id="name" name="name" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control bg-secondary text-light" id="email" name="email" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="department">Department</label>
+                                    <select class="form-control bg-secondary text-light" id="department" name="department">
+                                        <option value="Sales">Sales</option>
+                                        <option value="Customer Support">Customer Support</option>
+                                        <option value="Technical Support">Technical Support</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control bg-secondary text-light" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-4">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
